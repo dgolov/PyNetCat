@@ -52,7 +52,11 @@ class NetCat:
         while True:
             client_socket, _ = self.socket.accept()
             client_thread = threading.Thread(target=self.handle, args=(client_socket,))
-            client_thread.start()
+            try:
+                client_thread.start()
+            except Exception as e:
+                output = f"Execute error: {e}"
+                client_socket.send(output.encode())
 
     def handle(self, client_socket):
         if self.args.execute:
@@ -93,8 +97,12 @@ def execute(cmd):
     cmd = cmd.strip()
     if not cmd:
         return
-    output = subprocess.check_output(shlex.split(cmd), stderr=subprocess.STDOUT)
-    return output.decode()
+    try:
+        output = subprocess.check_output(shlex.split(cmd), stderr=subprocess.STDOUT)
+        return output.decode()
+    except Exception as e:
+        output = f"Execute error: {e}"
+        return output
 
 
 if __name__ == '__main__':
