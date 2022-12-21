@@ -14,7 +14,7 @@ python python netcat.py -h
 python python netcat.py -t 0.0.0.0 -p 5555 -l -c
 ```
 
-###Server example
+### Server example
 
 ```bigquery
 python python netcat.py -t 0.0.0.0 -p 5555
