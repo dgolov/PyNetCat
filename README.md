@@ -1,5 +1,7 @@
 # Py Netcat
 
+It can be useful for you to do not good things and rule the world.
+
 ## Ho to use?
 
 Help mode:
