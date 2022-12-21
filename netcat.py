@@ -94,6 +94,8 @@ class NetCat:
 
 
 def execute(cmd):
+    """ Executing commands and return output results
+    """
     cmd = cmd.strip()
     if not cmd:
         return
