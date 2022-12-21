@@ -1,5 +1,7 @@
-env
-venv
-.idea
+env/
+venv/
+.idea/
 __pycache__
 *.log
+test/
+Test/
