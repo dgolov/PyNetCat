@@ -78,6 +78,7 @@ class NetCat:
 
         elif self.args.command:
             cmd_buffer = b''
+            client_socket.send(b'BHP: #> ')
             while True:
                 try:
                     client_socket.send(b'BHP: #> ')
