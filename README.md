@@ -1,4 +1,4 @@
-# Py Netcat
+# Py Netcat Application
 
 It can be useful for you to do not good things and rule the world.
 
